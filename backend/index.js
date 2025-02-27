@@ -8,6 +8,7 @@ const connectDB = require("./utils/db");
 const userRoute = require("./routes/user.route");
 const companyRoute = require("./routes/company.route");
 const jobRoute = require("./routes/job.route");
+const applicationRoute = require("./routes/application.route");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -34,6 +35,7 @@ app.get("/home", (req, res) => {
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/company", companyRoute);
 app.use("/api/v1/job", jobRoute);
+app.use("/api/v1/application", applicationRoute);
 
 app.listen(PORT, () => {
   connectDB();
